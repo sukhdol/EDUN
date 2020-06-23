@@ -12,5 +12,8 @@ namespace EDUN.Domain.Entities
 
         [DataType(DataType.Currency)]
         public decimal Value { get; set; }
+
+        public int CategoryId { get; set; }
+        public Category Category { get; set; }
     }
 }
