@@ -1,3 +1,4 @@
+using EDUN.Application;
 using EDUN.Infrastructure;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -20,6 +21,10 @@ namespace EDUN.WebUI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // Application Services
+            services.AddApplication();
+            
+            // Infrastructure Services
             services.AddInfrastructure(Configuration);
             
             services.AddControllersWithViews();
