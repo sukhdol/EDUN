@@ -10,9 +10,11 @@ namespace EDUN.Application.Mapping
         {
             // Domain To API Resource
             CreateMap<Item, ItemResource>();
+            CreateMap<Category, CategoryResource>();
             
             // API Resource to Domain
             CreateMap<ItemResource, Item>();
+            CreateMap<CategoryResource, Category>();
         }
     }
 }
