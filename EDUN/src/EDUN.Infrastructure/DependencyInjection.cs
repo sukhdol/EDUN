@@ -5,6 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using EDUN.Application.Common.Interfaces;
 
 namespace EDUN.Infrastructure
 {
@@ -15,6 +16,8 @@ namespace EDUN.Infrastructure
             services.AddDbContext<ApplicationDbContext>(
                 options => options.UseSqlServer(configuration.GetConnectionString("Default"))
             );
+
+            services.AddScoped<IApplicationDbContext, ApplicationDbContext>();
 
             return services;
         }
