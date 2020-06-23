@@ -19,10 +19,16 @@ namespace EDUN.Infrastructure
             services.AddDbContext<ApplicationDbContext>(
                 options => options.UseSqlServer(configuration.GetConnectionString("Default"))
             );
-
+            
+            // Application Db Context
             services.AddScoped<IApplicationDbContext, ApplicationDbContext>();
-            services.AddScoped<ICategoryRepository, CategoryRepository>();
+            
+            // Unit Of Work
             services.AddScoped<IUnitOfWork, UnitOfWork.UnitOfWork>();
+            
+            // EDUN Entities Repositories
+            services.AddScoped<ICategoryRepository, CategoryRepository>();
+            services.AddScoped<IItemRepository, ItemRepository>();
 
             return services;
         }
