@@ -13,6 +13,7 @@ namespace EDUN.Application
             
             // Service Layer
             services.AddScoped<IItemService, ItemService>();
+            services.AddScoped<ICategoryService, CategoryService>();
 
             return services;
         }
