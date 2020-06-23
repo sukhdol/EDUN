@@ -12,6 +12,7 @@ namespace EDUN.Application.Services
     {
         Task<Item> GetItem(int id, bool includeRelated = true);
         Task<ItemResource> CreateItem(ItemResource newItem);
+        void DeleteItem(Item itemToDelete);
     }
     
     public class ItemService : IItemService
@@ -46,6 +47,12 @@ namespace EDUN.Application.Services
             var result = _mapper.Map<Item, ItemResource>(itemInDb);
 
             return result;
+        }
+
+        public void DeleteItem(Item itemToDelete)
+        {
+            _itemRepo.Remove(itemToDelete);
+            _unitOfWork.Complete();
         }
     }
 }
