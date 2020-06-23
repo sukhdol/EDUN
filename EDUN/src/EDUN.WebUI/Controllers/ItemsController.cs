@@ -24,6 +24,22 @@ namespace EDUN.WebUI.Controllers
             var result = await _itemService.CreateItem(newItemResource);
             
             return Ok(result);
-        } 
+        }
+
+        
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteItem(int id)
+        {
+            var itemInDb = await _itemService.GetItem(id, includeRelated: false);
+
+            if (itemInDb == null)
+            {
+                return NotFound();
+            }
+            
+            _itemService.DeleteItem(itemInDb);
+
+            return Ok(id);
+        }
     }
 }

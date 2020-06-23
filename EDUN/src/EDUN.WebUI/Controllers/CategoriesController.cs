@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using EDUN.Application.Resources;
+using EDUN.Application.Services;
 using EDUN.Domain.Entities;
 using EDUN.Domain.Interfaces.Repositories;
 using Microsoft.AspNetCore.Mvc;
@@ -9,17 +11,17 @@ namespace EDUN.WebUI.Controllers
     [Route("/api/categories")]
     public class CategoriesController : Controller
     {
-        private readonly ICategoryRepository _categoryRepo;
+        private readonly ICategoryService _categoryService;
 
-        public CategoriesController(ICategoryRepository categoryRepo)
+        public CategoriesController(ICategoryService categoryService)
         {
-            _categoryRepo = categoryRepo;
+            _categoryService = categoryService;
         }
 
         [HttpGet]
-        public async Task<IEnumerable<Category>> GetCategories()
+        public async Task<IEnumerable<CategoryResource>> GetCategories()
         {
-            return await _categoryRepo.GetCategories(true);
+            return await _categoryService.GetCategories(true);
         }
     }
 }
