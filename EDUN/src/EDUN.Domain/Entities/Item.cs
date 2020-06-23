@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace EDUN.Domain.Entities
@@ -10,7 +11,7 @@ namespace EDUN.Domain.Entities
         public int Id { get; set; }
         public string Name { get; set; }
 
-        [DataType(DataType.Currency)]
+        [Column(TypeName = "money")]
         public decimal Value { get; set; }
 
         public int CategoryId { get; set; }
