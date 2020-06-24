@@ -1,6 +1,7 @@
 ﻿using System.Reflection;
 using AutoMapper;
 using EDUN.Application.Services;
+using EDUN.Application.Services.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace EDUN.Application

@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using EDUN.Application.Resources;
 using EDUN.Application.Services;
+using EDUN.Application.Services.Interfaces;
 using EDUN.Domain.Entities;
 using EDUN.Domain.Interfaces.Repositories;
 using Microsoft.AspNetCore.Mvc;
@@ -19,7 +20,7 @@ namespace EDUN.WebUI.Controllers
         }
 
         [HttpGet]
-        public async Task<IEnumerable<CategoryResource>> GetCategories()
+        public async Task<IEnumerable<CategoryResource>> GetCategories(bool includeRelated)
         {
             return await _categoryService.GetCategories(true);
         }
