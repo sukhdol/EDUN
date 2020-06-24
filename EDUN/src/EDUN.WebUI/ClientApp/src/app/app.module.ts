@@ -4,11 +4,17 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
-import { AppComponent } from './app.component';
-import { NavMenuComponent } from './nav-menu/nav-menu.component';
-import { HomeComponent } from './home/home.component';
-import { CounterComponent } from './counter/counter.component';
-import { FetchDataComponent } from './fetch-data/fetch-data.component';
+import { AppComponent } from './components/app.component';
+import { NavMenuComponent } from './components/nav-menu/nav-menu.component';
+import { HomeComponent } from './components/home/home.component';
+import { CounterComponent } from './components/counter/counter.component';
+import { FetchDataComponent } from './components/fetch-data/fetch-data.component';
+import { CategoryItemsListComponent } from './components/category-items-list/category-items-list.component';
+import { ItemFormComponent } from './components/item-form/item-form.component';
+
+import { CategoriesService } from './services/categories.service';
+import { ItemsService } from './services/items.service';
+
 
 @NgModule({
   declarations: [
@@ -16,7 +22,9 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
     NavMenuComponent,
     HomeComponent,
     CounterComponent,
-    FetchDataComponent
+    FetchDataComponent,
+    CategoryItemsListComponent,
+    ItemFormComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -26,9 +34,13 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
+      { path: 'category-items-list', component: CategoryItemsListComponent },
     ])
   ],
-  providers: [],
+  providers: [
+    CategoriesService,
+    ItemsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

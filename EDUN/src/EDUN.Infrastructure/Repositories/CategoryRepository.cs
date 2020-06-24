@@ -21,10 +21,15 @@ namespace EDUN.Infrastructure.Repositories
         {
             if (!includeRelated)
             {
-                return await _applicationDbContext.Categories.ToListAsync();
+                return await _applicationDbContext.Categories
+                                .OrderBy(c => c.Name)
+                                .ToListAsync();
             }
 
-            return await _applicationDbContext.Categories.Include(c => c.Items).ToListAsync();
+            return await _applicationDbContext.Categories
+                                    .Include(c => c.Items)
+                                    .OrderBy(c => c.Name)
+                                    .ToListAsync();
         }
     }
 }

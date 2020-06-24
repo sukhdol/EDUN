@@ -11,6 +11,7 @@ namespace EDUN.Application.Mapping
             // Domain To API Resource
             CreateMap<Item, ItemResource>();
             CreateMap<Category, CategoryResource>();
+            CreateMap<Category, KeyValuePairResource>();
             
             // API Resource to Domain
             CreateMap<ItemResource, Item>();

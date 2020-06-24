@@ -3,16 +3,12 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
 using EDUN.Application.Resources;
+using EDUN.Application.Services.Interfaces;
 using EDUN.Domain.Entities;
 using EDUN.Domain.Interfaces.Repositories;
 
 namespace EDUN.Application.Services
 {
-    public interface ICategoryService
-    {
-        Task<IEnumerable<CategoryResource>> GetCategories(bool includeRelated = true);
-    }
-    
     public class CategoryService : ICategoryService
     {
         private readonly IMapper _mapper;
@@ -30,6 +26,15 @@ namespace EDUN.Application.Services
             var categoriesInDb = await _categoryRepo.GetCategories(includeRelated);
 
             var result = _mapper.Map<IEnumerable<Category>, IEnumerable<CategoryResource>>(categoriesInDb);
+
+            return result;
+        }
+
+        public async Task<IEnumerable<KeyValuePairResource>> GetCategoriesKeyValuePair()
+        {
+            var categoriesInDb = await _categoryRepo.GetCategories(includeRelated: false);
+
+            var result = _mapper.Map<IEnumerable<Category>, IEnumerable<KeyValuePairResource>>(categoriesInDb);
 
             return result;
         }

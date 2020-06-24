@@ -1,6 +1,7 @@
 ﻿using System.Threading.Tasks;
 using EDUN.Application.Resources;
 using EDUN.Application.Services;
+using EDUN.Application.Services.Interfaces;
 using EDUN.Domain.Entities;
 using EDUN.Domain.Interfaces.Repositories;
 using EDUN.Domain.Interfaces.UnitOfWork;
@@ -37,7 +38,7 @@ namespace EDUN.WebUI.Controllers
                 return NotFound();
             }
             
-            _itemService.DeleteItem(itemInDb);
+            await _itemService.DeleteItem(itemInDb);
 
             return Ok(id);
         }

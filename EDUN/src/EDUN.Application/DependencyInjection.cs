@@ -1,6 +1,7 @@
 ﻿using System.Reflection;
 using AutoMapper;
 using EDUN.Application.Services;
+using EDUN.Application.Services.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace EDUN.Application
@@ -12,8 +13,8 @@ namespace EDUN.Application
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
             
             // Service Layer
-            services.AddScoped<IItemService, ItemService>();
-            services.AddScoped<ICategoryService, CategoryService>();
+            services.AddTransient<IItemService, ItemService>();
+            services.AddTransient<ICategoryService, CategoryService>();
 
             return services;
         }

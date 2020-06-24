@@ -1,0 +1,26 @@
+<div class="container" *ngIf="catItemList">
+  <ng-container *ngFor="let category of catItemList">
+    <div class="row">
+      <div class="col-md-4"><h2>{{category.name}}</h2></div>
+      <div class="col-md-4"><h2>${{category.total}}</h2></div>
+    </div>
+    <ng-container *ngFor="let item of category.items">
+      <div class="row">
+        <div class="col-md-3 offset-md-1">{{item.name}}</div>
+        <div class="col-md-1 offset-md-1">${{item.value}}</div>
+        <div class="col-md-1">
+            <i class="fa fa-trash cursor-pointer" (click)="deleteItem(item.id)"></i>
+        </div>
+      </div>
+    </ng-container>
+  </ng-container>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4"><h1>TOTAL</h1></div>
+    <div class="col-md-4"><h1>${{grandTotal}}</h1></div>
+  </div>
+</div>
+
+<app-item-form (addItemEvent)="getCategories()"></app-item-form>
