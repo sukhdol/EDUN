@@ -27,11 +27,13 @@ namespace EDUN.Infrastructure.Repositories
 
         public async Task<Item> GetItem(int id, bool includeRelated = true)
         {
+            // return Item only
             if (!includeRelated)
             {
                 return await _applicationDbContext.Items.FindAsync(id);
             }
 
+            // return Item with Category info
             return await _applicationDbContext.Items
                             .Include(i => i.Category)
                             .SingleOrDefaultAsync(i => i.Id == id);
