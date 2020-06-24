@@ -1,11 +1,15 @@
 <form class="form-inline">
   <div class="form-group mb-2">
-    <input type="text" class="form-control" [(ngModel)]="itemCreate.name" name="itemName" placeholder="Item Name" >
-    <input type="number" class="form-control" [(ngModel)]="itemCreate.value" name="itemValue">
+    <input type="text" class="form-control" [(ngModel)]="itemCreate.name" name="itemName" placeholder="Item Name">
+
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text">$</span>
+      </div>
+      <input type="number" class="form-control text-right" [(ngModel)]="itemCreate.value" name="itemValue">
+    </div>
     <select class="form-control">
-      <option value="1">Clothing</option>
-      <option value="2">Electronics</option>
-      <option value="3">Kitchen</option>
+      <option *ngFor="let category of categories" value="{{ category.id }}">{{category.name}}</option>
     </select>
     <button class="btn btn-primary" (click)="addItem()">Add</button>
   </div>
