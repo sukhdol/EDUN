@@ -13,8 +13,8 @@ namespace EDUN.Application
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
             
             // Service Layer
-            services.AddScoped<IItemService, ItemService>();
-            services.AddScoped<ICategoryService, CategoryService>();
+            services.AddTransient<IItemService, ItemService>();
+            services.AddTransient<ICategoryService, CategoryService>();
 
             return services;
         }
