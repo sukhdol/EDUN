@@ -12,6 +12,7 @@ import { FetchDataComponent } from './components/fetch-data/fetch-data.component
 import { CategoryItemsListComponent } from './components/category-items-list/category-items-list.component';
 
 import { CategoriesService } from './services/categories.service';
+import { ItemsService } from './services/items.service';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { CategoriesService } from './services/categories.service';
     ])
   ],
   providers: [
-    CategoriesService
+    CategoriesService,
+    ItemsService
   ],
   bootstrap: [AppComponent]
 })
