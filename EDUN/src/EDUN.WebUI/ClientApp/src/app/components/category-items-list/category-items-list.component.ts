@@ -38,8 +38,6 @@ export class CategoryItemsListComponent implements OnInit {
         this.catItemList.push(catItem);
         this.grandTotal += catItem.total;
       });
-
-      console.log('Items', this.catItemList);
     });
   }
 }
