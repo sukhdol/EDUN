@@ -31,7 +31,8 @@ This is a Single Page App (SPA) with Angular and ASP.NET for Nude Solutions deve
 1. Install the latest [.NET Core SDK](https://dotnet.microsoft.com/download)
 2. Install the latest [Node.js LTS](https://nodejs.org/en/)
 3. Navigate to `EDUN\EDUN` and run `dotnet ef database update --project src\EDUN.Infrastructure --startup-project src\EDUN.WebUI` to create the database
-4. Navigate to `EDUN\EDUN\src\EDUN.WebUI` and run `dotnet run` to run the project
+4. Navigate to `EDUN\EDUN\src\EDUN.WebUI\ClientApp` and run `npm install` to install node packages
+5. Navigate to `EDUN\EDUN\src\EDUN.WebUI` and run `dotnet run` to run the project
 
 ## Future Improvements
 
