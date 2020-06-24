@@ -10,6 +10,7 @@ import { HomeComponent } from './components/home/home.component';
 import { CounterComponent } from './components/counter/counter.component';
 import { FetchDataComponent } from './components/fetch-data/fetch-data.component';
 import { CategoryItemsListComponent } from './components/category-items-list/category-items-list.component';
+import { ItemFormComponent } from './components/item-form/item-form.component';
 
 import { CategoriesService } from './services/categories.service';
 import { ItemsService } from './services/items.service';
@@ -22,7 +23,8 @@ import { ItemsService } from './services/items.service';
     HomeComponent,
     CounterComponent,
     FetchDataComponent,
-    CategoryItemsListComponent
+    CategoryItemsListComponent,
+    ItemFormComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
