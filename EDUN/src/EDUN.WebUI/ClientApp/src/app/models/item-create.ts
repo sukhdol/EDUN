@@ -1,6 +1,5 @@
 export class ItemCreate
 {
-  id: number;
   name: string;
   value: number;
   categoryId: number;
