@@ -1,8 +1,8 @@
 <div class="container" *ngIf="catItemList">
   <ng-container *ngFor="let category of catItemList">
     <div class="row">
-      <div class="col-md-4"><h2>{{category.name}}</h2></div>
-      <div class="col-md-4"><h2>${{category.total}}</h2></div>
+      <div class="col-md-4"><h4>{{category.name}}</h4></div>
+      <div class="col-md-4"><h4>${{category.total}}</h4></div>
     </div>
     <ng-container *ngFor="let item of category.items">
       <div class="row">
@@ -18,8 +18,8 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-4"><h1>TOTAL</h1></div>
-    <div class="col-md-4"><h1>${{grandTotal}}</h1></div>
+    <div class="col-md-4"><h4>TOTAL</h4></div>
+    <div class="col-md-4"><h4>${{grandTotal}}</h4></div>
   </div>
 </div>
 

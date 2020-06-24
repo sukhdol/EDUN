@@ -6,6 +6,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using EDUN.Application.Common.Interfaces;
 using EDUN.Domain.Entities;
+using EDUN.Infrastructure.Persistence.Configuration;
 
 namespace EDUN.Infrastructure.Persistence
 {
@@ -21,6 +22,11 @@ namespace EDUN.Infrastructure.Persistence
         public async Task SaveChangesAsync()
         {
             await base.SaveChangesAsync();
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfiguration(new CategoryConfiguration());
         }
     }
 }
