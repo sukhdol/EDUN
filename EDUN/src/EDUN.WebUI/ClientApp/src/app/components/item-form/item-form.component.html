@@ -8,7 +8,7 @@
       </div>
       <input type="number" class="form-control text-right" [(ngModel)]="itemCreate.value" name="itemValue">
     </div>
-    <select class="form-control">
+    <select class="form-control" [(ngModel)]="itemCreate.categoryId" name="category">
       <option *ngFor="let category of categories" value="{{ category.id }}">{{category.name}}</option>
     </select>
     <button class="btn btn-primary" (click)="addItem()">Add</button>
