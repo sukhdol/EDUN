@@ -2,19 +2,13 @@
 using System.Threading.Tasks;
 using AutoMapper;
 using EDUN.Application.Resources;
+using EDUN.Application.Services.Interfaces;
 using EDUN.Domain.Entities;
 using EDUN.Domain.Interfaces.Repositories;
 using EDUN.Domain.Interfaces.UnitOfWork;
 
 namespace EDUN.Application.Services
 {
-    public interface IItemService
-    {
-        Task<Item> GetItem(int id, bool includeRelated = true);
-        Task<ItemResource> CreateItem(ItemResource newItem);
-        void DeleteItem(Item itemToDelete);
-    }
-    
     public class ItemService : IItemService
     {
         private readonly IUnitOfWork _unitOfWork;
