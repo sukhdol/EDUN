@@ -7,8 +7,6 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './components/app.component';
 import { NavMenuComponent } from './components/nav-menu/nav-menu.component';
 import { HomeComponent } from './components/home/home.component';
-import { CounterComponent } from './components/counter/counter.component';
-import { FetchDataComponent } from './components/fetch-data/fetch-data.component';
 import { CategoryItemsListComponent } from './components/category-items-list/category-items-list.component';
 import { ItemFormComponent } from './components/item-form/item-form.component';
 
@@ -21,8 +19,6 @@ import { ItemsService } from './services/items.service';
     AppComponent,
     NavMenuComponent,
     HomeComponent,
-    CounterComponent,
-    FetchDataComponent,
     CategoryItemsListComponent,
     ItemFormComponent
   ],
@@ -32,8 +28,6 @@ import { ItemsService } from './services/items.service';
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'counter', component: CounterComponent },
-      { path: 'fetch-data', component: FetchDataComponent },
       { path: 'category-items-list', component: CategoryItemsListComponent },
     ])
   ],
