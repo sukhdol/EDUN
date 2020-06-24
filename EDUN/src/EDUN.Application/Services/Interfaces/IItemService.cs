@@ -8,6 +8,6 @@ namespace EDUN.Application.Services.Interfaces
     {
         Task<Item> GetItem(int id, bool includeRelated = true);
         Task<ItemResource> CreateItem(ItemResource newItem);
-        void DeleteItem(Item itemToDelete);
+        Task DeleteItem(Item itemToDelete);
     }
 }

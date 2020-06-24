@@ -43,10 +43,10 @@ namespace EDUN.Application.Services
             return result;
         }
 
-        public void DeleteItem(Item itemToDelete)
+        public async Task DeleteItem(Item itemToDelete)
         {
             _itemRepo.Remove(itemToDelete);
-            _unitOfWork.Complete();
+            await _unitOfWork.Complete();
         }
     }
 }

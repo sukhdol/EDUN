@@ -38,7 +38,7 @@ namespace EDUN.WebUI.Controllers
                 return NotFound();
             }
             
-            _itemService.DeleteItem(itemInDb);
+            await _itemService.DeleteItem(itemInDb);
 
             return Ok(id);
         }
