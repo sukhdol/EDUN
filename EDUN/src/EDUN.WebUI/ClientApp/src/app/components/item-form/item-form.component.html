@@ -1,1 +1,12 @@
-<h3>item form</h3>
+<form class="form-inline">
+  <div class="form-group mb-2">
+    <input type="text" class="form-control" [(ngModel)]="itemCreate.name" name="itemName" placeholder="Item Name" >
+    <input type="number" class="form-control" [(ngModel)]="itemCreate.value" name="itemValue">
+    <select class="form-control">
+      <option value="1">Clothing</option>
+      <option value="2">Electronics</option>
+      <option value="3">Kitchen</option>
+    </select>
+    <button class="btn btn-primary" (click)="addItem()">Add</button>
+  </div>
+</form>
