@@ -1,3 +1,5 @@
+import { KeyValuePair } from './../../models/key-value-pair';
+import { CategoriesService } from 'src/app/services/categories.service';
 import { ItemCreate } from './../../models/item-create';
 import {Component, OnInit} from '@angular/core';
 import { ItemsService } from 'src/app/services/items.service';
@@ -8,16 +10,26 @@ import { ItemsService } from 'src/app/services/items.service';
 })
 export class ItemFormComponent implements OnInit {
   itemCreate = new ItemCreate();
+  categories = new Array<KeyValuePair>();
 
-  constructor(private itemsServie: ItemsService) {
-    this.itemCreate.name = 'asdasd';
-    this.itemCreate.value = 300;
+  constructor(private itemsServie: ItemsService,
+              private categoryService: CategoriesService) {
   }
 
   ngOnInit() {
+    this.getCategoryOptions();
   }
 
   addItem() {
     console.log('NEW ITEM', this.itemCreate);
+  }
+
+  getCategoryOptions() {
+    this.categoryService.getCategoriesKeyValuePair().subscribe(keyValuePairs => {
+      this.categories = new Array<KeyValuePair>();
+      keyValuePairs.forEach(keyValuePair => {
+        this.categories.push(new KeyValuePair(keyValuePair));
+      });
+    });
   }
 }
