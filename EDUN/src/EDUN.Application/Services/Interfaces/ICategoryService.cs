@@ -7,5 +7,6 @@ namespace EDUN.Application.Services.Interfaces
     public interface ICategoryService
     {
         Task<IEnumerable<CategoryResource>> GetCategories(bool includeRelated = true);
+        Task<IEnumerable<KeyValuePairResource>> GetCategoriesKeyValuePair();
     }
 }

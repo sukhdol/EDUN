@@ -29,5 +29,14 @@ namespace EDUN.Application.Services
 
             return result;
         }
+
+        public async Task<IEnumerable<KeyValuePairResource>> GetCategoriesKeyValuePair()
+        {
+            var categoriesInDb = await _categoryRepo.GetCategories(includeRelated: false);
+
+            var result = _mapper.Map<IEnumerable<Category>, IEnumerable<KeyValuePairResource>>(categoriesInDb);
+
+            return result;
+        }
     }
 }

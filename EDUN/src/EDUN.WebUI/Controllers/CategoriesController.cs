@@ -24,5 +24,12 @@ namespace EDUN.WebUI.Controllers
         {
             return await _categoryService.GetCategories(true);
         }
+        
+        [HttpGet]
+        [Route("~/api/categories/keyValuePair")]
+        public async Task<IEnumerable<KeyValuePairResource>> GetCategoriesKeyValuePair()
+        {
+            return await _categoryService.GetCategoriesKeyValuePair();
+        }
     }
 }
