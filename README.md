@@ -36,7 +36,7 @@ This is a Single Page App (SPA) with Angular and ASP.NET for Nude Solutions deve
 
 ## Future Improvements
 
-* Apply base domain, service and repository classes for identical properties and methods
+* Apply generic/base domain, service and repository classes for identical properties and methods
 * Use MediatR to handle data/events/methods
 * Apply FluentValidation for validating models
 * Create Domain Unit Tests, Application Unit and Integration Tests
