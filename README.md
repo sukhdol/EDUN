@@ -14,7 +14,7 @@ This is a Single Page App (SPA) with Angular and ASP.NET for Nude Solutions deve
 * FluentAPI
 * ASP.NET Core: Built-in IoC Container
 
-## Architechture/Principles
+## Architecture/Principles
 
 * CLEAN Architecture (Domain, Infrastructure, Application and WebUI)
 * N-Tier Architecture
