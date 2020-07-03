@@ -1,7 +1,7 @@
 # EDUN
 # Nude Solutions - Technical Assignment - ASP.NET Core 3.1 and Angular 8 (SPA) 
 
-This is a Single Page App (SPA) with Angular and ASP.NET for Nude Solutions developer assignment. 
+This is a Single Page App (SPA) with Angular and ASP.NET Core for Nude Solutions developer assignment. 
 
 ## Technologies
 
